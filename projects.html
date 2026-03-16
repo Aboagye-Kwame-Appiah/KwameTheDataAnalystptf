@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Kwame Aboagye Appiah | Data Analyst</title>
+  <meta name="description" content="Full project case studies by Kwame Aboagye Appiah — e-commerce dashboards, production optimisation, tourism analytics, and B2B performance intelligence."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .filter-bar { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
+    .filter-btn { padding:8px 18px; border:1px solid rgba(255,255,255,0.09); border-radius:100px; font-size:12px; font-weight:500; color:var(--muted); background:transparent; cursor:pointer; transition:border-color var(--transition), color var(--transition), background var(--transition); font-family:var(--font-body); }
+    .filter-btn:hover, .filter-btn.active { border-color:var(--gold); color:var(--gold); background:rgba(201,150,42,0.07); }
+    /* case study full-width */
+    .case-study { background:var(--navy-card); border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:24px; }
+    .cs-top { padding:36px 40px 0; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; }
+    .cs-num { font-family:var(--font-head); font-size:5rem; font-weight:700; color:rgba(201,150,42,0.1); line-height:1; flex-shrink:0; }
+    .cs-meta { flex:1; }
+    .cs-cat { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .cs-title { font-family:var(--font-head); font-size:clamp(1.3rem,2.5vw,2rem); font-weight:600; line-height:1.2; color:var(--white); margin-bottom:14px; }
+    .cs-body { display:grid; grid-template-columns:1fr 1fr 1fr; border-top:1px solid rgba(255,255,255,0.05); margin-top:24px; }
+    .cs-col { padding:24px 32px; border-right:1px solid rgba(255,255,255,0.05); }
+    .cs-col:last-child { border-right:none; }
+    .cs-col-label { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .cs-col-text { font-size:13px; color:var(--muted); line-height:1.7; }
+    .cs-col-text strong { color:var(--white); font-weight:500; }
+    .cs-impact { display:grid; grid-template-columns:repeat(3,1fr); background:rgba(201,150,42,0.04); border-top:1px solid var(--border); }
+    .cs-impact-item { padding:22px 28px; border-right:1px solid rgba(255,255,255,0.05); text-align:center; }
+    .cs-impact-item:last-child { border-right:none; }
+    .cs-impact-num { font-family:var(--font-head); font-size:1.8rem; font-weight:700; color:var(--gold-lt); line-height:1; margin-bottom:4px; }
+    .cs-impact-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; }
+    .cs-foot { padding:18px 32px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid rgba(255,255,255,0.05); gap:20px; flex-wrap:wrap; }
+    .cs-decision { font-size:13px; color:var(--muted); max-width:580px; }
+    .cs-decision strong { color:var(--white); }
+    @media (max-width:1024px) { .cs-body { grid-template-columns:1fr 1fr; } .cs-col:nth-child(2){border-right:none;} .cs-col:nth-child(3){grid-column:span 2;border-right:none;border-top:1px solid rgba(255,255,255,0.05);} .cs-impact{grid-template-columns:1fr;} .cs-impact-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.05);} }
+    @media (max-width:768px) { .cs-top{flex-direction:column;padding:24px 20px 0;} .cs-num{font-size:3.5rem;} .cs-body{grid-template-columns:1fr;} .cs-col{border-right:none;border-bottom:1px solid rgba(255,255,255,0.05);} .cs-col:last-child{border-bottom:none;} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Kwame <span>Appiah</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="nav-cta">Download CV</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container page-header-inner">
+    <div class="page-eyebrow"><span class="page-eyebrow-line"></span><span class="page-eyebrow-text">Portfolio · 7+ Projects</span></div>
+    <h1 class="page-h1">Project<br/><em>Case Studies</em></h1>
+    <p class="page-sub">Each project documents a <strong>real business problem</strong>, a structured methodology, and a quantified outcome — not just a dashboard screenshot.</p>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Featured Case Studies</div>
+    <div class="section-title">End-to-End<br/><em>Analytics Projects</em></div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProjects('all',this)">All Projects</button>
+      <button class="filter-btn" onclick="filterProjects('bi',this)">Business Intelligence</button>
+      <button class="filter-btn" onclick="filterProjects('python',this)">Python / EDA</button>
+      <button class="filter-btn" onclick="filterProjects('operations',this)">Operations</button>
+      <button class="filter-btn" onclick="filterProjects('tourism',this)">Tourism</button>
+    </div>
+
+    <!-- CS1 -->
+    <div class="case-study reveal" data-category="bi">
+      <div class="cs-top">
+        <div class="cs-num">01</div>
+        <div class="cs-meta">
+          <div class="cs-cat">E-Commerce · Business Intelligence · Excel</div>
+          <div class="cs-title">E-Commerce Executive Dashboard: Sales &amp; Growth Tracker</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">DAX</span><span class="tag">Pivot Models</span></div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col"><div class="cs-col-label">Business Problem</div><div class="cs-col-text">A retail business had <strong>$105M+ in transactional data</strong> with no consolidated view of growth drivers, payment method shifts, or segment-level profitability. Leadership was making pricing and inventory decisions without YoY visibility.</div></div>
+        <div class="cs-col"><div class="cs-col-label">Methodology</div><div class="cs-col-text"><strong>1. Data Audit</strong> — cleaned raw transactional records, resolved inconsistencies<br/><strong>2. Model Design</strong> — built dynamic pivot model with stakeholder KPIs<br/><strong>3. Dashboard</strong> — executive-ready visual output with YoY comparisons<br/><strong>4. Insight Layer</strong> — annotated key inflection points and payment trends</div></div>
+        <div class="cs-col"><div class="cs-col-label">Key Insights</div><div class="cs-col-text">16% year-over-year growth identified across primary revenue segments. <strong>Significant shift toward digital payments</strong> flagged as a strategic infrastructure signal. Three pricing decision areas unlocked from previously siloed transactional data.</div></div>
+      </div>
+      <div class="cs-impact">
+        <div class="cs-impact-item"><div class="cs-impact-num">$105M+</div><div class="cs-impact-label">Revenue Modelled</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">+16%</div><div class="cs-impact-label">YoY Growth Surfaced</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">3</div><div class="cs-impact-label">Decision Areas Unlocked</div></div>
+      </div>
+      <div class="cs-foot">
+        <div class="cs-decision"><strong>Decision Enabled:</strong> Leadership could identify which segments drove growth, where margin was eroding, and how payment infrastructure investment should be prioritised.</div>
+        <a href="https://github.com/Aboagye-Kwame-Appiah/E-Commerce-Dashboard-Excel-.git" target="_blank" rel="noopener" class="fp-link">View on GitHub <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- CS2 -->
+    <div class="case-study reveal" data-category="operations">
+      <div class="cs-top">
+        <div class="cs-num">02</div>
+        <div class="cs-meta">
+          <div class="cs-cat">Manufacturing · Operations Analytics · Python</div>
+          <div class="cs-title">Production Efficiency Optimisation &amp; Waste Reduction Analytics</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SciPy</span><span class="tag">Excel</span><span class="tag">Power BI</span></div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col"><div class="cs-col-label">Business Problem</div><div class="cs-col-text">A manufacturing facility faced costly mismatches between <strong>planned capacity and actual demand</strong>. Excess inventory, underutilised machines, and supply waste were eroding margins with no data-driven mechanism to identify root causes or test corrective scenarios.</div></div>
+        <div class="cs-col"><div class="cs-col-label">Methodology</div><div class="cs-col-text"><strong>1. Demand Modelling</strong> — extracted and cleaned production schedules vs. actual output<br/><strong>2. Gap Analysis</strong> — Python (Pandas) to identify capacity-demand misalignment patterns<br/><strong>3. Optimisation Engine</strong> — SciPy-based model to generate corrective production plans<br/><strong>4. Monitoring Layer</strong> — Power BI dashboard for real-time efficiency tracking</div></div>
+        <div class="cs-col"><div class="cs-col-label">Key Insights</div><div class="cs-col-text"><strong>Production lines 2 and 4</strong> showed highest demand-capacity mismatch, driving 68% of total waste. Shifting scheduling priority to high-demand SKUs while buffering low-frequency lines reduced projected waste. The optimisation model validated corrective action before implementation.</div></div>
+      </div>
+      <div class="cs-impact">
+        <div class="cs-impact-item"><div class="cs-impact-num">3-Tool</div><div class="cs-impact-label">Integrated Pipeline</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">5 Lines</div><div class="cs-impact-label">Production Lines Analysed</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">Live BI</div><div class="cs-impact-label">Monitoring Dashboard</div></div>
+      </div>
+      <div class="cs-foot">
+        <div class="cs-decision"><strong>Decision Enabled:</strong> Operations managers could test scheduling changes against the optimisation model before committing to production shifts — eliminating trial-and-error waste decisions.</div>
+        <a href="https://github.com/Aboagye-Kwame-Appiah/Data_Driven_Production_Optimization.git" target="_blank" rel="noopener" class="fp-link">View on GitHub <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+    </div>
+
+    <!-- CS3 -->
+    <div class="case-study reveal" data-category="bi">
+      <div class="cs-top">
+        <div class="cs-num">03</div>
+        <div class="cs-meta">
+          <div class="cs-cat">E-Commerce · Power BI · Revenue Analytics</div>
+          <div class="cs-title">E-Commerce Sales Performance Dashboard (Power BI)</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modelling</span></div>
+        </div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-col"><div class="cs-col-label">Business Problem</div><div class="cs-col-text">An e-commerce operator needed a consolidated analytical view across <strong>multiple markets, product segments, and sales channels</strong> — specifically to understand how discount strategies were affecting profit margins relative to revenue growth.</div></div>
+        <div class="cs-col"><div class="cs-col-label">Methodology</div><div class="cs-col-text"><strong>1. Data Model</strong> — built star schema in Power BI with fact and dimension tables<br/><strong>2. DAX Measures</strong> — calculated margin %, discount impact, and YoY variance<br/><strong>3. Interactive Reports</strong> — sliceable reports by market, product, and time<br/><strong>4. Insight Annotations</strong> — flagged anomalies and opportunities in report narrative</div></div>
+        <div class="cs-col"><div class="cs-col-label">Key Insights</div><div class="cs-col-text"><strong>Heavy discount activity in Market B</strong> was driving revenue volume but compressing margins by 11 percentage points. Product category C showed strong margin performance with low promotional spend — signalling a reallocation opportunity.</div></div>
+      </div>
+      <div class="cs-impact">
+        <div class="cs-impact-item"><div class="cs-impact-num">Multi-Mkt</div><div class="cs-impact-label">Market Coverage</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">11pp</div><div class="cs-impact-label">Margin Erosion Identified</div></div>
+        <div class="cs-impact-item"><div class="cs-impact-num">YoY</div><div class="cs-impact-label">Trend Analysis Built</div></div>
+      </div>
+      <div class="cs-foot">
+        <div class="cs-decision"><strong>Decision Enabled:</strong> Pricing and promotions team could quantify the true cost of discount strategies per market segment — enabling more precise trade promotion planning.</div>
+        <a href="https://github.com/Aboagye-Kwame-Appiah/E-commerce-Sales-Performance-Dashboard-Power-BI-.git" target="_blank" rel="noopener" class="fp-link">View on GitHub <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRID PROJECTS -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="section-label">Additional Projects</div>
+    <div class="section-title">More from the<br/><em>Portfolio</em></div>
+    <div class="projects-grid">
+      <div class="project-card reveal" data-category="python">
+        <div class="project-img"><span>🐍</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">Python · Exploratory Analysis</div>
+          <div class="project-name">Active Product Sales Analysis</div>
+          <p class="project-brief">EDA on product sales data to identify high-performers and seasonal demand patterns. Used Pandas, Matplotlib, and Seaborn to clean, visualise, and interpret sales trends — delivering product prioritisation insights.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">Python</span><span class="mini-tag">Pandas</span><span class="mini-tag">Seaborn</span></div>
+            <a href="https://github.com/Aboagye-Kwame-Appiah/Active-Product-Sales-Analysis.git" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" data-category="tourism">
+        <div class="project-img"><span>✈️</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">Tourism · Power BI</div>
+          <div class="project-name">Power BI Tourism Analytics Dashboard</div>
+          <p class="project-brief">Interactive Power BI report visualising regional tourism trends across months and regions. Combined line charts, bar graphs, and heatmaps to surface visitor volume, revenue patterns, and satisfaction scores.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">Power BI</span><span class="mini-tag">Heatmaps</span><span class="mini-tag">DAX</span></div>
+            <a href="https://app.powerbi.com/links/4C12ZZ76KG?ctid=bd697c1b-c481-479c-841e-c618542675c3&pbi_source=linkShare" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" data-category="tourism">
+        <div class="project-img"><span>🌍</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">Tourism · Ghana · Analytics</div>
+          <div class="project-name">Ghana Adventures Tourism Insight Dashboard</div>
+          <p class="project-brief">Interactive Power BI dashboard analysing Ghana tourism trends — uncovering visitor demographics, destination popularity, and seasonal travel patterns to inform data-driven strategy for a Ghana-based operator.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span><span class="mini-tag">Segmentation</span></div>
+            <a href="https://github.com/Aboagye-Kwame-Appiah/Ghana_Adventures_Project.git" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-category="bi">
+        <div class="project-img"><span>💼</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">B2B · Client Retention · BI</div>
+          <div class="project-name">TechSolutions Ghana Business Performance Dashboard</div>
+          <p class="project-brief">Analysed project performance and client retention for TechSolutions Ghana — identifying satisfaction drivers, efficiency gaps, and churn risk signals across a B2B service portfolio.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">Power BI</span><span class="mini-tag">SQL</span><span class="mini-tag">KPIs</span></div>
+            <a href="https://github.com/Aboagye-Kwame-Appiah/TechSolutions_Ghana_Project.git" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1" data-category="bi">
+        <div class="project-img"><span>📊</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">E-Commerce · Sales · Power BI</div>
+          <div class="project-name">E-Commerce Sales Performance (Power BI)</div>
+          <p class="project-brief">Interactive Power BI dashboard analysing sales across markets, segments, and product lines — visualising revenue, profit margins, discount impact, and YoY trends to surface pricing strategy insights.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">Power BI</span><span class="mini-tag">DAX</span><span class="mini-tag">YoY</span></div>
+            <a href="https://github.com/Aboagye-Kwame-Appiah/E-commerce-Sales-Performance-Dashboard-Power-BI-.git" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2" style="border-color:rgba(201,150,42,0.08);">
+        <div class="project-img" style="background:rgba(201,150,42,0.04);"><span>🔭</span><div class="project-img-overlay"></div></div>
+        <div class="project-body">
+          <div class="project-category">Coming Soon</div>
+          <div class="project-name">Financial KPI Automation &amp; Healthcare Analytics</div>
+          <p class="project-brief">In development: automated financial reporting pipeline using Power BI dataflows, and a patient performance insights dashboard for a healthcare context — building domain depth in regulated-sector analytics.</p>
+          <div class="project-footer">
+            <div class="project-tools"><span class="mini-tag">In Progress</span></div>
+            <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener" class="project-arrow">→</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener" class="btn-outline">View All on GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kwame Aboagye Appiah. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.08});
+  reveals.forEach(el => obs.observe(el));
+  function filterProjects(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.case-study,.project-card').forEach(el => {
+      el.style.display = (cat === 'all' || el.dataset.category === cat) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

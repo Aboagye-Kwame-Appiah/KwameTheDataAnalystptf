@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Kwame Aboagye Appiah | Data Analyst</title>
+  <meta name="description" content="Contact Kwame Aboagye Appiah — open to Data Analyst, BI Analyst, and Quality Data Analyst roles. Based in Accra, Ghana. Remote-ready."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-layout { display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; }
+    /* detail cards */
+    .contact-detail-link { background:var(--navy-card); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; display:flex; align-items:center; gap:14px; text-decoration:none; margin-bottom:10px; transition:border-color var(--transition); }
+    .contact-detail-link:hover { border-color:var(--gold); }
+    .cd-icon { width:38px; height:38px; border-radius:8px; background:rgba(201,150,42,0.12); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .cd-arrow { margin-left:auto; color:var(--muted); font-size:14px; flex-shrink:0; }
+    /* availability */
+    .avail-card { background:var(--navy-card); border:1px solid rgba(40,200,64,0.2); border-radius:var(--radius); padding:18px 20px; display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+    .avail-title { font-size:14px; font-weight:600; color:#28C840; margin-bottom:2px; }
+    .avail-sub { font-size:12px; color:var(--muted); }
+    /* looking for */
+    .looking-for { background:var(--navy-card); border:1px solid var(--border); border-radius:var(--radius); padding:22px; margin-bottom:10px; }
+    .lf-title { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+    .lf-item { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted); margin-bottom:7px; }
+    .lf-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+    /* form */
+    .form-box { background:var(--navy-card); border:1px solid var(--border); border-radius:16px; padding:36px; }
+    .form-box-title { font-family:var(--font-head); font-size:1.5rem; font-weight:600; color:var(--white); margin-bottom:5px; }
+    .form-box-sub { font-size:13px; color:var(--muted); margin-bottom:28px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px; }
+    .form-group { margin-bottom:16px; }
+    .form-label { display:block; font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:7px; }
+    .form-input, .form-textarea, .form-select { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:8px; padding:12px 14px; font-size:14px; font-family:var(--font-body); color:var(--white); outline:none; transition:border-color var(--transition), background var(--transition); appearance:none; }
+    .form-input:focus, .form-textarea:focus, .form-select:focus { border-color:var(--gold); background:rgba(201,150,42,0.04); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--muted); opacity:0.6; }
+    .form-textarea { resize:vertical; min-height:120px; }
+    .form-select option { background:var(--navy-card); color:var(--white); }
+    .form-submit { width:100%; padding:14px; background:var(--gold); color:var(--navy); border:none; border-radius:var(--radius); font-size:14px; font-weight:600; cursor:pointer; font-family:var(--font-body); display:flex; align-items:center; justify-content:center; gap:8px; transition:background var(--transition), transform var(--transition); }
+    .form-submit:hover { background:var(--gold-lt); transform:translateY(-1px); }
+    .form-note { font-size:12px; color:var(--muted); text-align:center; margin-top:10px; }
+    /* success state */
+    .form-success { display:none; text-align:center; padding:36px 20px; }
+    .form-success-icon { font-size:44px; margin-bottom:14px; display:block; }
+    .form-success-title { font-family:var(--font-head); font-size:1.4rem; font-weight:600; color:var(--white); margin-bottom:8px; }
+    .form-success-text { font-size:14px; color:var(--muted); }
+    /* quick ctas */
+    .quick-ctas { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:48px; }
+    .quick-cta { background:var(--navy-card); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center; transition:border-color var(--transition), transform var(--transition); display:block; }
+    .quick-cta:hover { border-color:var(--gold); transform:translateY(-4px); }
+    .qc-icon { font-size:26px; margin-bottom:10px; display:block; }
+    .qc-title { font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px; }
+    .qc-desc { font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.6; }
+    .qc-cta { font-size:13px; font-weight:500; color:var(--gold-lt); }
+    @media (max-width:1024px) { .contact-layout{grid-template-columns:1fr;} .quick-ctas{grid-template-columns:1fr;} }
+    @media (max-width:768px) { .form-row{grid-template-columns:1fr;} .form-box{padding:24px 18px;} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Kwame <span>Appiah</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="nav-cta">Download CV</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container page-header-inner">
+    <div class="page-eyebrow"><span class="page-eyebrow-line"></span><span class="page-eyebrow-text">Get In Touch</span></div>
+    <h1 class="page-h1">Let's Build Something<br/><em>Worth Measuring</em></h1>
+    <p class="page-sub">I respond within <strong>24–48 hours</strong>. Whether it's a role, a project, or a data challenge — let's have the conversation.</p>
+  </div>
+</section>
+
+<section class="section section-navy">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- LEFT -->
+      <div class="reveal">
+        <div class="section-label">Contact Details</div>
+        <div class="about-headline" style="font-size:clamp(1.5rem,2.5vw,2rem);margin-bottom:16px;">Open to the Right<br/><em>Opportunity</em></div>
+        <p style="font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:24px;">I'm actively looking for roles where <strong style="color:var(--white);font-weight:500;">data directly shapes decisions</strong>. If you're building an analytics team or need a QA-grounded analyst who can own the full pipeline, I'd like to hear about it.</p>
+
+        <a href="mailto:nqwame26@gmail.com" class="contact-detail-link">
+          <div class="cd-icon">📧</div>
+          <div><div class="cd-label" style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:2px;">Email</div><div class="cd-value" style="font-size:14px;font-weight:500;color:var(--white);">nqwame26@gmail.com</div></div>
+          <span class="cd-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener" class="contact-detail-link">
+          <div class="cd-icon">💼</div>
+          <div><div class="cd-label" style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:2px;">LinkedIn</div><div class="cd-value" style="font-size:14px;font-weight:500;color:var(--white);">Aboagye Kwame Appiah</div></div>
+          <span class="cd-arrow">→</span>
+        </a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener" class="contact-detail-link">
+          <div class="cd-icon">🐙</div>
+          <div><div class="cd-label" style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:2px;">GitHub</div><div class="cd-value" style="font-size:14px;font-weight:500;color:var(--white);">Aboagye-Kwame-Appiah</div></div>
+          <span class="cd-arrow">→</span>
+        </a>
+        <a class="contact-detail-link" style="cursor:default;">
+          <div class="cd-icon">📍</div>
+          <div><div class="cd-label" style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:2px;">Location</div><div class="cd-value" style="font-size:14px;font-weight:500;color:var(--white);">Accra, Ghana · Open to Remote</div></div>
+        </a>
+
+        <div class="avail-card">
+          <span class="status-dot"></span>
+          <div><div class="avail-title">Currently Available for Hire</div><div class="avail-sub">Open to full-time roles and contract engagements — starting immediately</div></div>
+        </div>
+
+        <div class="looking-for">
+          <div class="lf-title">I'm Looking For</div>
+          <div class="lf-item"><span class="lf-dot"></span>Data Analyst or Business Intelligence Analyst roles</div>
+          <div class="lf-item"><span class="lf-dot"></span>Quality Data Analyst or Operational Analytics positions</div>
+          <div class="lf-item"><span class="lf-dot"></span>Environments where data directly influences decisions</div>
+          <div class="lf-item"><span class="lf-dot"></span>Teams that value data integrity and reproducibility</div>
+          <div class="lf-item"><span class="lf-dot"></span>Remote-first or Accra-based organisations</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="form-box reveal reveal-delay-1">
+        <div id="form-content">
+          <div class="form-box-title">Send a Message</div>
+          <p class="form-box-sub">Fill in the form below and I'll get back to you within 24–48 hours.</p>
+
+          <div class="form-row">
+            <div><label class="form-label" for="fname">First Name *</label><input class="form-input" type="text" id="fname" placeholder="Jane" required/></div>
+            <div><label class="form-label" for="lname">Last Name</label><input class="form-input" type="text" id="lname" placeholder="Smith"/></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="email">Email Address *</label><input class="form-input" type="email" id="email" placeholder="jane@company.com" required/></div>
+          <div class="form-group"><label class="form-label" for="company">Company / Organisation</label><input class="form-input" type="text" id="company" placeholder="Your Company Name"/></div>
+          <div class="form-group">
+            <label class="form-label" for="reason">Reason for Reaching Out *</label>
+            <select class="form-select" id="reason" required>
+              <option value="" disabled selected>Select a reason...</option>
+              <option value="job">Job Opportunity / Recruitment</option>
+              <option value="contract">Contract / Freelance Work</option>
+              <option value="collab">Analytics Collaboration</option>
+              <option value="feedback">Portfolio Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="message">Message *</label><textarea class="form-textarea" id="message" placeholder="Tell me about the role, project, or reason you're reaching out..." required></textarea></div>
+          <button class="form-submit" onclick="handleSubmit(event)">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+          <p class="form-note">No spam. No newsletters. Just a genuine conversation about the right opportunity.</p>
+        </div>
+        <div class="form-success" id="form-success">
+          <span class="form-success-icon">✅</span>
+          <div class="form-success-title">Message Sent!</div>
+          <p class="form-success-text">Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- QUICK CTAs -->
+    <div class="quick-ctas">
+      <a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="quick-cta">
+        <span class="qc-icon">📄</span><div class="qc-title">Download My CV</div>
+        <p class="qc-desc">Full resume with work history, certifications, tools, and contact details — ready for ATS and recruiter review.</p>
+        <span class="qc-cta">Download Now →</span>
+      </a>
+      <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener" class="quick-cta">
+        <span class="qc-icon">💼</span><div class="qc-title">Connect on LinkedIn</div>
+        <p class="qc-desc">Send a connection request or DM on LinkedIn. I check it regularly and respond to genuine recruiter outreach.</p>
+        <span class="qc-cta">Open LinkedIn →</span>
+      </a>
+      <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener" class="quick-cta">
+        <span class="qc-icon">🐙</span><div class="qc-title">Browse the Code</div>
+        <p class="qc-desc">All projects are documented on GitHub — Jupyter notebooks, Power BI files, and dataset references. The work speaks for itself.</p>
+        <span class="qc-cta">Visit GitHub →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kwame Aboagye Appiah. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:nqwame26@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
+  reveals.forEach(el => obs.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const reason = document.getElementById('reason').value;
+    const message = document.getElementById('message').value.trim();
+    if (!fname || !email || !reason || !message) { alert('Please fill in all required fields.'); return; }
+    const subject = encodeURIComponent('Portfolio Contact: ' + reason + ' from ' + fname);
+    const body = encodeURIComponent('Name: ' + fname + ' ' + document.getElementById('lname').value + '\nEmail: ' + email + '\nCompany: ' + (document.getElementById('company').value || 'N/A') + '\nReason: ' + reason + '\n\nMessage:\n' + message);
+    window.location.href = 'mailto:nqwame26@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+</script>
+</body>
+</html>

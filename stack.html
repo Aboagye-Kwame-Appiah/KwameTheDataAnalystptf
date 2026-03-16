@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Stack — Kwame Aboagye Appiah | Data Analyst</title>
+  <meta name="description" content="Full technical stack of Kwame Aboagye Appiah — Power BI, Python, SQL, Excel, Tableau, DAX, Pandas, Git, Jupyter, and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* primary tool hero cards */
+    .primary-tools { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-bottom:48px; }
+    .tool-hero { background:var(--navy-card); border:1px solid var(--border); border-radius:var(--radius); padding:28px 20px; text-align:center; position:relative; overflow:hidden; transition:transform var(--transition), border-color var(--transition); }
+    .tool-hero:hover { transform:translateY(-4px); border-color:var(--gold); }
+    .tool-hero::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),transparent); }
+    .tool-logo { font-size:32px; margin-bottom:12px; display:block; }
+    .tool-name { font-size:15px; font-weight:700; color:var(--white); margin-bottom:5px; }
+    .tool-role { font-size:11px; color:var(--muted); margin-bottom:14px; }
+    .tool-bar-track { height:4px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden; }
+    .tool-bar-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--gold),var(--gold-lt)); width:0%; transition:width 1.2s cubic-bezier(0.4,0,0.2,1); }
+    .tool-pct { font-size:11px; font-weight:600; color:var(--gold); margin-top:5px; display:block; text-align:right; }
+    /* stack section header */
+    .stack-section { margin-bottom:44px; }
+    .stack-section-header { display:flex; align-items:center; gap:14px; margin-bottom:16px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .stack-section-icon { font-size:20px; }
+    .stack-section-name { font-size:15px; font-weight:600; color:var(--white); }
+    .stack-section-count { margin-left:auto; font-size:10px; font-weight:600; letter-spacing:1px; color:var(--gold); text-transform:uppercase; }
+    .stack-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .stack-tool { background:var(--navy-card); border:1px solid rgba(255,255,255,0.07); border-radius:var(--radius); padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:border-color var(--transition), transform var(--transition); }
+    .stack-tool:hover { border-color:var(--gold); transform:translateX(3px); }
+    .stack-tool-left { display:flex; align-items:center; gap:10px; }
+    .st-icon { font-size:18px; flex-shrink:0; }
+    .st-name { font-size:13px; font-weight:600; color:var(--white); }
+    .st-use { font-size:11px; color:var(--muted); margin-top:2px; }
+    .lvl-adv { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:3px 9px; border-radius:4px; color:var(--gold); background:rgba(201,150,42,0.1); flex-shrink:0; }
+    .lvl-prof { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:3px 9px; border-radius:4px; color:#7DB5FF; background:rgba(125,181,255,0.08); flex-shrink:0; }
+    .lvl-wk { font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; padding:3px 9px; border-radius:4px; color:var(--muted); background:rgba(255,255,255,0.05); flex-shrink:0; }
+    /* workflow */
+    .workflow { display:grid; grid-template-columns:repeat(5,1fr); background:var(--navy-card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .ws { padding:24px 16px; text-align:center; border-right:1px solid rgba(255,255,255,0.05); position:relative; }
+    .ws:last-child { border-right:none; }
+    .ws::after { content:'→'; position:absolute; right:-10px; top:50%; transform:translateY(-50%); color:var(--gold); font-size:13px; z-index:1; }
+    .ws:last-child::after { display:none; }
+    .ws-num { font-family:var(--font-head); font-size:1.6rem; font-weight:700; color:rgba(201,150,42,0.15); line-height:1; margin-bottom:8px; }
+    .ws-icon { font-size:20px; margin-bottom:8px; display:block; }
+    .ws-phase { font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:5px; }
+    .ws-tools { font-size:11px; color:var(--muted); line-height:1.6; }
+    /* github */
+    .gh-box { background:var(--navy-card); border:1px solid var(--border); border-radius:12px; padding:36px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+    .gh-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:20px; }
+    .gh-stat { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:14px; }
+    .gh-stat-num { font-family:var(--font-head); font-size:1.6rem; font-weight:700; color:var(--gold-lt); line-height:1; margin-bottom:3px; }
+    .gh-stat-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; }
+    .gh-lang { margin-bottom:12px; }
+    .gh-lang-row { display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; }
+    .gh-lang-name { color:var(--white); font-weight:500; }
+    .gh-lang-pct { color:var(--gold); font-weight:600; }
+    .gh-bar-track { height:4px; background:rgba(255,255,255,0.07); border-radius:2px; overflow:hidden; }
+    .gh-bar-fill { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--gold),var(--gold-lt)); width:0%; transition:width 1.2s ease; }
+    /* learning */
+    .learn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .learn-card { background:var(--navy-card); border:1px solid rgba(255,255,255,0.07); border-radius:var(--radius); padding:24px; transition:border-color var(--transition), transform var(--transition); }
+    .learn-card:hover { border-color:var(--gold); transform:translateY(-3px); }
+    .learn-status { display:inline-block; padding:3px 10px; border-radius:4px; font-size:10px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px; }
+    .learn-status.active { background:rgba(40,200,64,0.1); color:#28C840; }
+    .learn-status.planned { background:rgba(201,150,42,0.1); color:var(--gold); }
+    .learn-title { font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px; }
+    .learn-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+    @media (max-width:1024px) { .primary-tools{grid-template-columns:repeat(2,1fr);} .workflow{grid-template-columns:1fr;} .ws{border-right:none;border-bottom:1px solid rgba(255,255,255,0.05);} .ws:last-child{border-bottom:none;} .ws::after{content:'↓';right:50%;bottom:-11px;top:auto;transform:translateX(50%);} .ws:last-child::after{display:none;} .gh-box{grid-template-columns:1fr;} .learn-grid{grid-template-columns:repeat(2,1fr);} .stack-grid-3{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width:768px) { .learn-grid{grid-template-columns:1fr;} .gh-stat-grid{grid-template-columns:1fr;} .stack-grid-3{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Kwame <span>Appiah</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="stack.html" class="active">Stack</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="nav-cta">Download CV</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container page-header-inner">
+    <div class="page-eyebrow"><span class="page-eyebrow-line"></span><span class="page-eyebrow-text">Technical Stack</span></div>
+    <h1 class="page-h1">Tools &amp;<br/><em>Technologies</em></h1>
+    <p class="page-sub">A full breakdown of the technologies I use — from BI platforms and query languages to Python libraries and workflow tools. <strong>Applied in real projects</strong>, not just listed.</p>
+  </div>
+</section>
+
+<!-- PRIMARY -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Primary Tools</div>
+    <div class="section-title">The Core of My<br/><em>Analytical Toolkit</em></div>
+
+    <div class="primary-tools">
+      <div class="tool-hero reveal"><span class="tool-logo">📊</span><div class="tool-name">Power BI</div><div class="tool-role">Primary BI &amp; Dashboard Platform</div><div class="tool-bar-track"><div class="tool-bar-fill" data-width="95"></div></div><span class="tool-pct">95% · Advanced</span></div>
+      <div class="tool-hero reveal reveal-delay-1"><span class="tool-logo">📗</span><div class="tool-name">Excel</div><div class="tool-role">Data Modelling &amp; Pivot Analysis</div><div class="tool-bar-track"><div class="tool-bar-fill" data-width="92"></div></div><span class="tool-pct">92% · Advanced</span></div>
+      <div class="tool-hero reveal reveal-delay-2"><span class="tool-logo">🐍</span><div class="tool-name">Python</div><div class="tool-role">Analytics, EDA &amp; Optimisation</div><div class="tool-bar-track"><div class="tool-bar-fill" data-width="85"></div></div><span class="tool-pct">85% · Proficient</span></div>
+      <div class="tool-hero reveal reveal-delay-3"><span class="tool-logo">🗃️</span><div class="tool-name">SQL</div><div class="tool-role">Data Querying &amp; Transformation</div><div class="tool-bar-track"><div class="tool-bar-fill" data-width="88"></div></div><span class="tool-pct">88% · Proficient</span></div>
+    </div>
+
+    <!-- BI tools -->
+    <div class="stack-section reveal">
+      <div class="stack-section-header"><span class="stack-section-icon">📐</span><span class="stack-section-name">Business Intelligence &amp; Visualisation</span><span class="stack-section-count">5 Tools</span></div>
+      <div class="stack-grid-3">
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">📊</span><div><div class="st-name">Power BI</div><div class="st-use">Dashboard design, DAX measures, interactive reports</div></div></div><span class="lvl-adv">Advanced</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">📗</span><div><div class="st-name">Microsoft Excel</div><div class="st-use">Pivot tables, Power Query, financial modelling</div></div></div><span class="lvl-adv">Advanced</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">⚙️</span><div><div class="st-name">DAX</div><div class="st-use">Calculated columns, measures, time intelligence</div></div></div><span class="lvl-adv">Advanced</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">📈</span><div><div class="st-name">Tableau</div><div class="st-use">Interactive charts, geographic visualisation</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🔄</span><div><div class="st-name">Power Query (M)</div><div class="st-use">ETL, data transformation, query folding</div></div></div><span class="lvl-adv">Advanced</span></div>
+      </div>
+    </div>
+
+    <!-- SQL -->
+    <div class="stack-section reveal">
+      <div class="stack-section-header"><span class="stack-section-icon">🗃️</span><span class="stack-section-name">Data Engineering &amp; Querying</span><span class="stack-section-count">3 Tools</span></div>
+      <div class="stack-grid-3">
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🗃️</span><div><div class="st-name">SQL</div><div class="st-use">Complex joins, subqueries, CTEs, aggregations</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🐬</span><div><div class="st-name">MySQL</div><div class="st-use">Database querying, schema design, data extraction</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🧹</span><div><div class="st-name">Data Cleaning &amp; ETL</div><div class="st-use">Anomaly detection, normalisation, pipeline design</div></div></div><span class="lvl-adv">Advanced</span></div>
+      </div>
+    </div>
+
+    <!-- Python -->
+    <div class="stack-section reveal">
+      <div class="stack-section-header"><span class="stack-section-icon">🐍</span><span class="stack-section-name">Python Libraries</span><span class="stack-section-count">6 Libraries</span></div>
+      <div class="stack-grid-3">
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🐼</span><div><div class="st-name">Pandas</div><div class="st-use">Data manipulation, cleaning, time series</div></div></div><span class="lvl-adv">Advanced</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🔢</span><div><div class="st-name">NumPy</div><div class="st-use">Numerical computing, array operations</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">📉</span><div><div class="st-name">Matplotlib</div><div class="st-use">Custom charts, publication-quality visualisations</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🎨</span><div><div class="st-name">Seaborn</div><div class="st-use">Statistical visualisation, distribution plots</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🤖</span><div><div class="st-name">Scikit-learn</div><div class="st-use">Regression, clustering, feature engineering</div></div></div><span class="lvl-wk">Developing</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🔬</span><div><div class="st-name">SciPy</div><div class="st-use">Optimisation models, statistical testing</div></div></div><span class="lvl-prof">Proficient</span></div>
+      </div>
+    </div>
+
+    <!-- Workflow -->
+    <div class="stack-section reveal">
+      <div class="stack-section-header"><span class="stack-section-icon">🛠️</span><span class="stack-section-name">Workflow &amp; Development Tools</span><span class="stack-section-count">4 Tools</span></div>
+      <div class="stack-grid-3">
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">🐙</span><div><div class="st-name">Git &amp; GitHub</div><div class="st-use">Version control, project portfolio</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">📓</span><div><div class="st-name">Jupyter Notebooks</div><div class="st-use">EDA, analysis documentation, reproducibility</div></div></div><span class="lvl-adv">Advanced</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">💻</span><div><div class="st-name">VS Code</div><div class="st-use">Python scripting, SQL editing, extensions</div></div></div><span class="lvl-prof">Proficient</span></div>
+        <div class="stack-tool"><div class="stack-tool-left"><span class="st-icon">☁️</span><div><div class="st-name">Google Workspace</div><div class="st-use">Sheets, Docs, Slides for stakeholder outputs</div></div></div><span class="lvl-adv">Advanced</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="section-label">How I Work</div>
+    <div class="section-title">End-to-End Analytical<br/><em>Workflow</em></div>
+    <div class="workflow reveal">
+      <div class="ws"><div class="ws-num">01</div><span class="ws-icon">🎯</span><div class="ws-phase">Problem Definition</div><div class="ws-tools">Stakeholder brief · Decision mapping · KPI framework</div></div>
+      <div class="ws"><div class="ws-num">02</div><span class="ws-icon">🧹</span><div class="ws-phase">Data Preparation</div><div class="ws-tools">Python · Power Query · SQL · Excel</div></div>
+      <div class="ws"><div class="ws-num">03</div><span class="ws-icon">🔍</span><div class="ws-phase">Analysis &amp; EDA</div><div class="ws-tools">Python · Jupyter · SQL queries</div></div>
+      <div class="ws"><div class="ws-num">04</div><span class="ws-icon">📊</span><div class="ws-phase">Visualisation</div><div class="ws-tools">Power BI · DAX · Matplotlib</div></div>
+      <div class="ws"><div class="ws-num">05</div><span class="ws-icon">💬</span><div class="ws-phase">Communication</div><div class="ws-tools">Dashboard · Insight narrative · Recommendations</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GITHUB -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Open Source Portfolio</div>
+    <div class="section-title">GitHub Activity &amp;<br/><em>Project Stats</em></div>
+    <div class="gh-box reveal">
+      <div>
+        <div class="about-headline" style="font-size:1.5rem;margin-bottom:10px;">Portfolio at a Glance</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:0;">All analytical work is versioned and documented on GitHub — with Jupyter notebooks, dataset references, and clear README files for each project.</p>
+        <div class="gh-stat-grid">
+          <div class="gh-stat"><div class="gh-stat-num">10</div><div class="gh-stat-label">Repositories</div></div>
+          <div class="gh-stat"><div class="gh-stat-num">7+</div><div class="gh-stat-label">Analytics Projects</div></div>
+          <div class="gh-stat"><div class="gh-stat-num">4</div><div class="gh-stat-label">Business Domains</div></div>
+          <div class="gh-stat"><div class="gh-stat-num">100%</div><div class="gh-stat-label">Documented</div></div>
+        </div>
+        <div style="margin-top:24px;"><a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener" class="btn-outline">Visit GitHub Profile →</a></div>
+      </div>
+      <div class="animate-gh">
+        <div class="gh-lang"><div class="gh-lang-row"><span class="gh-lang-name">Python / Jupyter</span><span class="gh-lang-pct">48%</span></div><div class="gh-bar-track"><div class="gh-bar-fill" data-width="48"></div></div></div>
+        <div class="gh-lang"><div class="gh-lang-row"><span class="gh-lang-name">Power BI / DAX</span><span class="gh-lang-pct">27%</span></div><div class="gh-bar-track"><div class="gh-bar-fill" data-width="27"></div></div></div>
+        <div class="gh-lang"><div class="gh-lang-row"><span class="gh-lang-name">Excel / CSV Datasets</span><span class="gh-lang-pct">15%</span></div><div class="gh-bar-track"><div class="gh-bar-fill" data-width="15"></div></div></div>
+        <div class="gh-lang"><div class="gh-lang-row"><span class="gh-lang-name">SQL</span><span class="gh-lang-pct">7%</span></div><div class="gh-bar-track"><div class="gh-bar-fill" data-width="7"></div></div></div>
+        <div class="gh-lang"><div class="gh-lang-row"><span class="gh-lang-name">HTML / CSS (Portfolio)</span><span class="gh-lang-pct">3%</span></div><div class="gh-bar-track"><div class="gh-bar-fill" data-width="3"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="section-label">Growth Roadmap</div>
+    <div class="section-title">Currently Learning &amp;<br/><em>Next on the Roadmap</em></div>
+    <div class="learn-grid">
+      <div class="learn-card reveal"><span class="learn-status active">In Progress</span><div class="learn-title">Advanced DAX &amp; Power BI Dataflows</div><p class="learn-desc">Building deeper expertise in complex DAX patterns, row-level security, and Power BI dataflow automation for enterprise-grade BI pipelines.</p></div>
+      <div class="learn-card reveal reveal-delay-1"><span class="learn-status active">In Progress</span><div class="learn-title">SQL Optimisation &amp; Window Functions</div><p class="learn-desc">Strengthening SQL through advanced window functions (ROW_NUMBER, LAG, LEAD), query performance tuning, and indexing strategies.</p></div>
+      <div class="learn-card reveal reveal-delay-2"><span class="learn-status active">In Progress</span><div class="learn-title">Python for Predictive Analytics</div><p class="learn-desc">Expanding Scikit-learn proficiency — building regression and classification models for demand forecasting and churn prediction use cases.</p></div>
+      <div class="learn-card reveal"><span class="learn-status planned">Planned</span><div class="learn-title">Azure Data Services (ADF, Synapse)</div><p class="learn-desc">Planning to develop cloud analytics skills via Azure Data Factory and Synapse Analytics to broaden enterprise data pipeline capability.</p></div>
+      <div class="learn-card reveal reveal-delay-1"><span class="learn-status planned">Planned</span><div class="learn-title">dbt (Data Build Tool)</div><p class="learn-desc">Planning to learn dbt for SQL-based data transformations in modern analytics engineering workflows — increasingly required in BI roles.</p></div>
+      <div class="learn-card reveal reveal-delay-2"><span class="learn-status planned">Planned</span><div class="learn-title">Google Looker Studio</div><p class="learn-desc">Expanding BI tool coverage into Google's ecosystem — Looker Studio is frequently required alongside Power BI and Tableau in analyst job descriptions.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kwame Aboagye Appiah. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
+  reveals.forEach(el => obs.observe(el));
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.tool-bar-fill,.gh-bar-fill').forEach((b,i) => setTimeout(() => b.style.width = b.dataset.width+'%', i*100));
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.3});
+  document.querySelectorAll('.primary-tools,.animate-gh').forEach(el => barObs.observe(el));
+</script>
+</body>
+</html>

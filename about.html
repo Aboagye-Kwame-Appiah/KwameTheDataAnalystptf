@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Kwame Aboagye Appiah | Data Analyst</title>
+  <meta name="description" content="Kwame Aboagye Appiah — QA-grounded Data Analyst combining ISO/FDA compliance expertise with Python, SQL, and Power BI analytics."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .about-two-col { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+    .about-sticky { position: sticky; top: 100px; }
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: linear-gradient(180deg, var(--gold) 0%, transparent 100%); }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -28px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--navy); }
+    .timeline-year { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+    .timeline-role { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+    .timeline-org { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+    .timeline-pts { display: flex; flex-direction: column; gap: 5px; }
+    .timeline-pt { font-size: 13px; color: var(--muted); line-height: 1.6; padding-left: 14px; position: relative; }
+    .timeline-pt::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 11px; }
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .value-card { background: var(--navy-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; transition: transform var(--transition), border-color var(--transition); }
+    .value-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .value-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+    .value-name { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+    .value-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .avail-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 6px; background: rgba(40,200,64,0.08); border: 1px solid rgba(40,200,64,0.2); font-size: 12px; font-weight: 500; color: #28C840; margin-top: 24px; }
+    .cta-band { background: var(--navy-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .cta-band-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+    @media (max-width: 1024px) {
+      .about-two-col { grid-template-columns: 1fr; }
+      .about-sticky { position: static; }
+      .values-grid { grid-template-columns: repeat(2,1fr); }
+      .cta-band { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 768px) { .values-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Kwame <span>Appiah</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="nav-cta">Download CV</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container page-header-inner">
+    <div class="page-eyebrow">
+      <span class="page-eyebrow-line"></span>
+      <span class="page-eyebrow-text">About Me</span>
+    </div>
+    <h1 class="page-h1">The Analyst Behind<br/><em>the Data</em></h1>
+    <p class="page-sub">I don't just build dashboards — I build <strong>the case for action</strong>. My background in QA/QC isn't a detour from analytics; it's what makes my analytics different.</p>
+    <div class="avail-badge">
+      <span class="status-dot"></span>
+      Open to Opportunities · Accra, Ghana · Remote-Ready
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="about-two-col">
+      <div class="about-sticky reveal">
+        <div class="section-label">My Story</div>
+        <div class="about-headline">Built different.<br/><em>On purpose.</em></div>
+        <p class="about-body">Most analysts learn data cleaning from tutorials. I learned it inside <strong>FDA and ISO 17025 compliance frameworks</strong> — where a missed anomaly has audit consequences. That background defines how I approach every dataset.</p>
+        <div class="about-differentiators">
+          <div class="differentiator">
+            <div class="diff-icon">🎯</div>
+            <div class="diff-text"><strong>Regulatory-Grade Data Integrity</strong>Zero-tolerance for data quality issues, trained in environments where accuracy is a legal obligation.</div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">🏭</div>
+            <div class="diff-text"><strong>Operations-First Analytical Lens</strong>I've worked where inefficiency has a measurable cost per hour — every insight I build is framed around what it enables.</div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">📊</div>
+            <div class="diff-text"><strong>Cross-Domain Portfolio</strong>Retail e-commerce, manufacturing, tourism, B2B services — four industries, quantified outcomes in each.</div>
+          </div>
+          <div class="differentiator">
+            <div class="diff-icon">🤝</div>
+            <div class="diff-text"><strong>Stakeholder-Oriented Design</strong>Every dashboard built to answer a question that enables a decision — not to display data density.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="about-role-badge">Data Analyst · QA Background · 7+ Projects</div>
+        <p class="about-body">My career started in Quality Assurance — enforcing <strong>FDA regulations, ISO 9001, and ISO 17025 laboratory standards</strong> in operational environments where data accuracy wasn't a preference, it was a legal requirement. I learned to build systems where the margin of error is a risk, not a footnote.</p>
+        <p class="about-body">Through a rigorous Data Analytics programme, I channelled that discipline into the full analytics stack: cleaning and transforming data in Python, querying datasets in SQL, building dynamic models in Excel, and designing executive dashboards in Power BI and Tableau. The regulatory mindset became an analytical advantage.</p>
+        <p class="about-body">Today, the projects I build span <strong>e-commerce revenue tracking, manufacturing optimisation, tourism analytics, and B2B performance intelligence</strong>. Every output is designed with one question in mind: what decision does this enable?</p>
+        <p class="about-body">I'm actively seeking roles where data directly shapes operational decisions — where an analyst isn't just reporting what happened, but helping determine what should happen next.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <a href="contact.html" class="btn-primary">Get In Touch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="about-two-col">
+      <div class="reveal">
+        <div class="section-label">Professional Journey</div>
+        <div class="about-headline">Experience &amp;<br/><em>Education</em></div>
+        <p class="about-body">A non-linear path that built something most analytics professionals can't offer: operational rigour forged in regulatory environments, combined with full-stack data analytics capability.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="text-align:center;padding:20px 24px;background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--gold-lt);line-height:1;">$105M+</div>
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Revenue Analysed</div>
+          </div>
+          <div style="text-align:center;padding:20px 24px;background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--gold-lt);line-height:1;">7+</div>
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Projects Delivered</div>
+          </div>
+          <div style="text-align:center;padding:20px 24px;background:var(--navy-card);border:1px solid var(--border);border-radius:var(--radius);">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--gold-lt);line-height:1;">4</div>
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;">Industries Covered</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025 — Present</div>
+            <div class="timeline-role">Data Analytics Professional</div>
+            <div class="timeline-org">Independent · Portfolio Projects</div>
+            <div class="timeline-pts">
+              <div class="timeline-pt">Built 7+ end-to-end analytics projects across retail, manufacturing, tourism &amp; B2B</div>
+              <div class="timeline-pt">Tracked $105M+ in revenue across e-commerce dashboards</div>
+              <div class="timeline-pt">Developed Python-based production optimisation engine</div>
+              <div class="timeline-pt">Designed executive Power BI dashboards for stakeholder decisions</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2025</div>
+            <div class="timeline-role">Data Analytics Bootcamp</div>
+            <div class="timeline-org">Generation Ghana · Certified Programme</div>
+            <div class="timeline-pts">
+              <div class="timeline-pt">Intensive training: Python, SQL, Power BI, Excel, Tableau</div>
+              <div class="timeline-pt">Applied learning to real-world datasets and business problems</div>
+              <div class="timeline-pt">Graduated with multi-domain analytics portfolio</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">Prior Experience</div>
+            <div class="timeline-role">QA / QC &amp; Production Leader</div>
+            <div class="timeline-org">Manufacturing &amp; Laboratory Environments</div>
+            <div class="timeline-pts">
+              <div class="timeline-pt">Enforced FDA, ISO 9001, and ISO 17025 compliance frameworks</div>
+              <div class="timeline-pt">Led quality systems improvement and staff training</div>
+              <div class="timeline-pt">Managed production data, safety standards, compliance documentation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">What I Believe</div>
+    <div class="section-title">Principles That Shape<br/><em>How I Work</em></div>
+    <div class="values-grid">
+      <div class="value-card reveal"><span class="value-icon">🎯</span><div class="value-name">Decision-Driven Analysis</div><p class="value-desc">Every analysis starts with a decision that needs to be made. If I can't articulate what action the data enables, the question isn't defined well enough yet.</p></div>
+      <div class="value-card reveal reveal-delay-1"><span class="value-icon">🔍</span><div class="value-name">Traceable Truth</div><p class="value-desc">Data conclusions must be reproducible and defensible. I document methodology, flag assumptions, and validate outputs — not as extras, but as standard practice.</p></div>
+      <div class="value-card reveal reveal-delay-2"><span class="value-icon">📐</span><div class="value-name">Clarity Over Complexity</div><p class="value-desc">Complex models nobody can interpret create no value. I optimise for the clearest communication of the most relevant insight.</p></div>
+      <div class="value-card reveal"><span class="value-icon">📈</span><div class="value-name">Measurable Outcomes</div><p class="value-desc">Analytics value is measured by the decisions it enables and the results those decisions produce. I hold my own work to that standard.</p></div>
+      <div class="value-card reveal reveal-delay-1"><span class="value-icon">🤝</span><div class="value-name">Stakeholder Partnership</div><p class="value-desc">The best dashboards are built with stakeholders, not for them. I ask the questions that reveal the actual business need beneath the surface request.</p></div>
+      <div class="value-card reveal reveal-delay-2"><span class="value-icon">🔄</span><div class="value-name">Continuous Sharpening</div><p class="value-desc">The field moves fast. I am actively building expertise in SQL optimisation, Power BI automation, and predictive analytics to stay ahead of what the market needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <div class="section-label">Ready to Connect?</div>
+        <div class="about-headline" style="margin-bottom:10px;">Let's Talk About What<br/><em>Data Can Do</em></div>
+        <p style="font-size:15px;color:var(--muted);max-width:480px;line-height:1.7;">Whether you have an open role, a project need, or a data problem worth solving — I'd like to hear about it.</p>
+      </div>
+      <div class="cta-band-actions">
+        <a href="contact.html" class="btn-primary">Get In Touch <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="btn-outline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kwame Aboagye Appiah. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

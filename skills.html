@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills — Kwame Aboagye Appiah | Data Analyst</title>
+  <meta name="description" content="Core competencies of Kwame Aboagye Appiah — Power BI, Python, SQL, Excel, DAX, and QA-grounded operational analytics."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* proficiency bars */
+    .bar-group { margin-bottom: 14px; }
+    .bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .bar-label span:last-child { color: var(--gold); font-weight: 600; }
+    .bar-track { height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-lt)); width: 0%; transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+    /* proficiency table */
+    .matrix-wrap { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .matrix-table { width: 100%; border-collapse: collapse; }
+    .matrix-table thead tr { background: rgba(201,150,42,0.07); border-bottom: 1px solid var(--border); }
+    .matrix-table th { padding: 13px 20px; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); text-align: left; }
+    .matrix-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.05); transition: background var(--transition); }
+    .matrix-table tbody tr:last-child { border-bottom: none; }
+    .matrix-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .matrix-table td { padding: 15px 20px; font-size: 13px; color: var(--muted); vertical-align: middle; }
+    .matrix-table td:first-child { font-weight: 600; color: var(--white); }
+    .level-dots { display: flex; gap: 5px; }
+    .level-dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.1); }
+    .level-dot.on { background: var(--gold); }
+    .lvl-adv { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); }
+    .lvl-prof { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #7DB5FF; }
+    .lvl-wk { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+    /* comp card with bars */
+    .comp-card-bars { padding: 28px; }
+    .comp-card-split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    @media (max-width: 1024px) { .comp-card-split { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .matrix-table th, .matrix-table td { padding: 10px 12px; font-size: 12px; } }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">Kwame <span>Appiah</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="stack.html">Stack</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://docs.google.com/document/d/1Hc6uV0sCjh-FKZpTAiHxBuNFEqFKidMx/edit?usp=sharing" target="_blank" rel="noopener" class="nav-cta">Download CV</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-bg"></div>
+  <div class="container page-header-inner">
+    <div class="page-eyebrow"><span class="page-eyebrow-line"></span><span class="page-eyebrow-text">Core Competencies</span></div>
+    <h1 class="page-h1">Skills &amp;<br/><em>Capabilities</em></h1>
+    <p class="page-sub">A structured view of technical depth across analytics, BI, Python, and operational intelligence — built through <strong>real projects</strong>, not just coursework.</p>
+  </div>
+</section>
+
+<!-- SKILL CLUSTERS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Technical Competencies</div>
+    <div class="section-title">Six Skill Clusters,<br/><em>One Analytical Mindset</em></div>
+
+    <!-- Featured cluster with bars -->
+    <div class="comp-card" style="margin-bottom:20px;">
+      <div class="comp-card-split comp-card-bars">
+        <div>
+          <span class="comp-icon">📊</span>
+          <div class="comp-title">Business Intelligence &amp; Dashboarding</div>
+          <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px;">My primary delivery surface. I design dashboards that answer the question a stakeholder didn't know how to ask — using Power BI as the primary tool, DAX as the engine, and stakeholder decision-relevance as the only filter.</p>
+          <div class="comp-skills">
+            <span class="skill-chip">Power BI</span><span class="skill-chip">DAX Measures</span><span class="skill-chip">Tableau</span>
+            <span class="skill-chip">Excel Pivot Models</span><span class="skill-chip">KPI Architecture</span><span class="skill-chip">Stakeholder UX</span>
+          </div>
+        </div>
+        <div class="animate-bars">
+          <div class="bar-group"><div class="bar-label"><span>Power BI</span><span>95%</span></div><div class="bar-track"><div class="bar-fill" data-width="95"></div></div></div>
+          <div class="bar-group"><div class="bar-label"><span>DAX &amp; Power Query</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" data-width="88"></div></div></div>
+          <div class="bar-group"><div class="bar-label"><span>Excel Advanced</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" data-width="92"></div></div></div>
+          <div class="bar-group"><div class="bar-label"><span>Tableau</span><span>80%</span></div><div class="bar-track"><div class="bar-fill" data-width="80"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-grid">
+      <div class="comp-card reveal">
+        <span class="comp-icon">🗃️</span>
+        <div class="comp-title">Data Engineering &amp; SQL</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Querying, joining, and transforming data at the source — before it reaches a dashboard. Strong in complex joins, aggregations, filtering, and query optimisation.</p>
+        <div class="comp-skills"><span class="skill-chip">SQL</span><span class="skill-chip">MySQL</span><span class="skill-chip">Complex JOINs</span><span class="skill-chip">CTEs</span><span class="skill-chip">ETL</span></div>
+      </div>
+      <div class="comp-card reveal reveal-delay-1">
+        <span class="comp-icon">🐍</span>
+        <div class="comp-title">Python Analytics &amp; Automation</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">EDA to optimisation modelling. Pandas for transformation, Matplotlib/Seaborn for visualisation, SciPy for production optimisation — with Jupyter for reproducibility.</p>
+        <div class="comp-skills"><span class="skill-chip">Pandas</span><span class="skill-chip">NumPy</span><span class="skill-chip">Matplotlib</span><span class="skill-chip">Seaborn</span><span class="skill-chip">SciPy</span></div>
+      </div>
+      <div class="comp-card reveal reveal-delay-2">
+        <span class="comp-icon">🏭</span>
+        <div class="comp-title">Operational &amp; QA Analytics</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Applying ISO 9001, ISO 17025, and FDA compliance frameworks as a lens for data integrity, process efficiency, and production optimisation analysis.</p>
+        <div class="comp-skills"><span class="skill-chip">ISO 9001</span><span class="skill-chip">ISO 17025</span><span class="skill-chip">FDA Compliance</span><span class="skill-chip">Waste Analysis</span></div>
+      </div>
+      <div class="comp-card reveal">
+        <span class="comp-icon">📈</span>
+        <div class="comp-title">Commercial &amp; Revenue Analytics</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Tracking, modelling, and interpreting revenue, margin, retention, and growth trends — across retail e-commerce, B2B services, and tourism.</p>
+        <div class="comp-skills"><span class="skill-chip">Revenue Modelling</span><span class="skill-chip">YoY Analysis</span><span class="skill-chip">Segment Analysis</span><span class="skill-chip">Margin Tracking</span></div>
+      </div>
+      <div class="comp-card reveal reveal-delay-1">
+        <span class="comp-icon">🔎</span>
+        <div class="comp-title">Insight Communication</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Analytics that stay in Jupyter notebooks create no value. I design outputs that communicate findings to non-technical audiences clearly and with a clear recommendation.</p>
+        <div class="comp-skills"><span class="skill-chip">Executive Reporting</span><span class="skill-chip">Data Storytelling</span><span class="skill-chip">Dashboard UX</span></div>
+      </div>
+      <div class="comp-card reveal reveal-delay-2">
+        <span class="comp-icon">📋</span>
+        <div class="comp-title">Documentation &amp; Methodology</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">QA-trained documentation discipline applied to analytics — every assumption logged, every transformation traceable, every output defensible.</p>
+        <div class="comp-skills"><span class="skill-chip">Methodology Docs</span><span class="skill-chip">Assumption Logging</span><span class="skill-chip">Reproducibility</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFICIENCY MATRIX -->
+<section class="section section-mid">
+  <div class="container">
+    <div class="section-label">Proficiency Breakdown</div>
+    <div class="section-title">Tool-by-Tool<br/><em>Proficiency Matrix</em></div>
+    <div class="matrix-wrap reveal">
+      <table class="matrix-table">
+        <thead><tr><th>Tool / Skill</th><th>Category</th><th>Proficiency</th><th>Level</th><th>Applied In</th></tr></thead>
+        <tbody>
+          <tr><td>Power BI</td><td><span class="skill-chip">BI &amp; Visualisation</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div></div></td><td><span class="lvl-adv">Advanced</span></td><td>5+ Projects</td></tr>
+          <tr><td>Excel (Pivot, Power Query)</td><td><span class="skill-chip">BI &amp; Modelling</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div></div></td><td><span class="lvl-adv">Advanced</span></td><td>$105M Revenue Tracker</td></tr>
+          <tr><td>DAX</td><td><span class="skill-chip">Query Language</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div></div></td><td><span class="lvl-adv">Advanced</span></td><td>All BI Projects</td></tr>
+          <tr><td>SQL / MySQL</td><td><span class="skill-chip">Data Querying</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div></div></td><td><span class="lvl-prof">Proficient</span></td><td>B2B &amp; Retail Projects</td></tr>
+          <tr><td>Python (Pandas, NumPy)</td><td><span class="skill-chip">Analytics</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div></div></td><td><span class="lvl-prof">Proficient</span></td><td>Production Optimisation</td></tr>
+          <tr><td>Matplotlib / Seaborn</td><td><span class="skill-chip">Visualisation</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div></div></td><td><span class="lvl-prof">Proficient</span></td><td>Product Sales Analysis</td></tr>
+          <tr><td>Tableau</td><td><span class="skill-chip">BI &amp; Visualisation</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div><div class="level-dot"></div></div></td><td><span class="lvl-wk">Working</span></td><td>Training &amp; Coursework</td></tr>
+          <tr><td>Scikit-learn</td><td><span class="skill-chip">Machine Learning</span></td><td><div class="level-dots"><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot on"></div><div class="level-dot"></div><div class="level-dot"></div></div></td><td><span class="lvl-wk">Developing</span></td><td>In Progress</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <div class="section-title">Certifications &amp;<br/><em>Formal Training</em></div>
+    <div class="cert-grid">
+      <div class="cert-card reveal"><div class="cert-badge">📊</div><div><div class="cert-name">Data Analytics Bootcamp</div><div class="cert-issuer">Generation Ghana</div><div class="cert-year">Certified · 2025</div></div></div>
+      <div class="cert-card reveal reveal-delay-1"><div class="cert-badge">💡</div><div><div class="cert-name">Power BI for Business Analytics</div><div class="cert-issuer">Microsoft Learn</div><div class="cert-year">2025</div></div></div>
+      <div class="cert-card reveal reveal-delay-2"><div class="cert-badge">🐍</div><div><div class="cert-name">Python for Data Analysis</div><div class="cert-issuer">Project-Based Portfolio</div><div class="cert-year">2025</div></div></div>
+      <div class="cert-card reveal"><div class="cert-badge">🗃️</div><div><div class="cert-name">SQL for Data Analytics</div><div class="cert-issuer">HackerRank / Portfolio</div><div class="cert-year">2025</div></div></div>
+      <div class="cert-card reveal reveal-delay-1"><div class="cert-badge">🔬</div><div><div class="cert-name">ISO 9001 Quality Management</div><div class="cert-issuer">Applied QA Experience</div><div class="cert-year">Professional</div></div></div>
+      <div class="cert-card reveal reveal-delay-2"><div class="cert-badge">🧪</div><div><div class="cert-name">ISO 17025 &amp; FDA Compliance</div><div class="cert-issuer">Laboratory QA Experience</div><div class="cert-year">Professional</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2026 Kwame Aboagye Appiah. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="about.html">About</a><a href="projects.html">Projects</a>
+        <a href="https://github.com/Aboagye-Kwame-Appiah" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/aboagye-kwame-appiah-990545200" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(e => e.forEach(el => { if(el.isIntersecting) el.target.classList.add('visible'); }), {threshold:0.1});
+  reveals.forEach(el => obs.observe(el));
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.bar-fill').forEach((b,i) => setTimeout(() => b.style.width = b.dataset.width+'%', i*120));
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.3});
+  document.querySelectorAll('.animate-bars').forEach(el => barObs.observe(el));
+</script>
+</body>
+</html>
